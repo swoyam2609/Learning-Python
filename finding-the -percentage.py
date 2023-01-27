@@ -6,4 +6,3 @@ if __name__ == '__main__':
         scores = list(map(float, line))
         student_marks[name] = scores
     query_name = input()
-    for i in student_marks.
