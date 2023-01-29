@@ -118,9 +118,11 @@ print(df)
 As you can see from the result above, the DataFrame is like a table with rows and columns.
 
 Pandas use the `loc` attribute to return one or more specified row(s)
+
 ```py
 print(df.loc[1])
 ```
+
 ### **Output**
 
 ```
@@ -130,6 +132,7 @@ print(df.loc[1])
 ```
 
 ## Named Indexes in DataFrame
+
 With the `index` argument, you can name your own indexes.
 
 ### Example
@@ -141,8 +144,9 @@ data = {
   "duration": [50, 40, 45]
 }
 df = pd.DataFrame(data, index = ["day1", "day2", "day3"])
-print(df) 
+print(df)
 ```
+
 ### **Output**
 
 ```
@@ -151,6 +155,7 @@ print(df)
   day2       380        40
   day3       390        45
 ```
+
 <br>
 
 ### **Selecting some rows from the DataFrame**
@@ -160,6 +165,7 @@ print(df.loc[["day2", "day3"]])
 ```
 
 # Reading data from a CSV File
+
 A simple way to store big data sets is to use CSV files (comma separated files).
 
 CSV files contains plain text and is a well know format that can be read by everyone including Pandas.
@@ -175,9 +181,11 @@ df = pd.read_csv('data.csv')
 
 print(df)
 ```
+
 **_Note:_ If you have a large DataFrame with many rows, Pandas will only return the first 5 rows, and the last 5 rows**
 
 ## `to_string()` method
+
 **Tip:** use `to_string()` to print the entire DataFrame.
 
 ### **Example**
@@ -189,6 +197,7 @@ print(df.to_string())
 ```
 
 ## max_rows
+
 The number of rows returned is defined in Pandas option settings.
 
 You can check your system's maximum rows with the `pd.options.display.max_rows` statement.
@@ -201,12 +210,11 @@ You can check your system's maximum rows with the `pd.options.display.max_rows` 
 import pandas as pd
 pd.options.display.max_rows = 9999
 df = pd.read_csv('data.csv')
-print(df) 
+print(df)
 ```
 
-
-
 # Reading data from a JSON File
+
 Big data sets are often stored, or extracted as JSON.
 
 JSON is plain text, but has the format of an object, and is well known in the world of programming, including Pandas.
@@ -214,15 +222,17 @@ JSON is plain text, but has the format of an object, and is well known in the wo
 In our examples we will be using a JSON file called `'data.json'`.
 
 ### **Example**
+
 Loading the JSON file into a data frame
 
 ```py
 import pandas as pd
 df = pd.read_json('data.json')
-print(df) 
+print(df)
 ```
 
 ## `to_string()` method
+
 **Tip:** use `to_string()` to print the entire DataFrame.
 
 ### **Example**
@@ -234,6 +244,7 @@ print(df.to_string())
 ```
 
 ## Disctionary as JSON
+
 JSON = Python Dictionary
 
 JSON objects have the same format as Python dictionaries.
@@ -264,5 +275,72 @@ data = {
 
 df = pd.DataFrame(data)
 
-print(df) 
+print(df)
+```
+
+# Analyzing DataFrames
+
+## Viewing the Data
+
+One of the most used method for getting a quick overview of the DataFrame, is the `head()` method.
+
+The `head()` method returns the headers and a specified number of rows, starting from the top.
+
+### **Example**
+
+```py
+import pandas as pd
+df = pd.read_csv('data.csv')
+print(df.head(10))
+# Get a quick overview by printing the first 10 rows of the DataFrame:
+```
+
+**Note:** if the number of rows is not specified, the head() method will return the top 5 rows.
+
+<br>
+<hr>
+<br>
+
+There is also a `tail()` method for viewing the last rows of the DataFrame.
+
+The `tail()` method returns the headers and a specified number of rows, starting from the bottom.
+
+### **Example**
+
+```py
+import pandas as pd
+df = pd.read_csv('data.csv')
+print(df.tail())
+# Get a quick overview by printing the last 5 rows of the DataFrame:
+```
+
+## Info about the data
+
+The DataFrames object has a method called `info()`, that gives you more information about the data set.
+
+### **Example**
+
+```py
+import pandas as pd
+df = pd.read_csv('data.csv')
+print(df.info())
+```
+
+### **Output**
+
+```py
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 169 entries, 0 to 168
+#There are 169 rows in the data set, and 4 columns.
+Data columns (total 4 columns):
+#The `info()` method also tells us how many Non-Null values there are present in each column, and in our data set it seems like there are 164 of 169 Non-Null values in the "Calories" column.
+ #   Column    Non-Null Count  Dtype
+---  ------    --------------  -----
+ 0   Duration  169 non-null    int64
+ 1   Pulse     169 non-null    int64
+ 2   Maxpulse  169 non-null    int64
+ 3   Calories  164 non-null    float64
+dtypes: float64(1), int64(3)
+memory usage: 5.4 KB
+None
 ```
