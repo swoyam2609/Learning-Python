@@ -121,3 +121,40 @@ Pandas use the `loc` attribute to return one or more specified row(s)
 ```py
 print(df.loc[1])
 ```
+### **Output**
+
+```
+  calories    420
+  duration     50
+  Name: 0, dtype: int64
+```
+
+## Named Indexes in DataFrame
+With the `index` argument, you can name your own indexes.
+
+### Example
+
+```py
+import pandas as pd
+data = {
+  "calories": [420, 380, 390],
+  "duration": [50, 40, 45]
+}
+df = pd.DataFrame(data, index = ["day1", "day2", "day3"])
+print(df) 
+```
+### **Output**
+
+```
+        calories  duration
+  day1       420        50
+  day2       380        40
+  day3       390        45
+```
+<br>
+
+### **Selecting some rows from the DataFrame**
+
+```py
+print(df.loc["day2", "day3"])
+```
