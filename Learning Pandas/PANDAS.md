@@ -3,8 +3,8 @@
 Pandas is a Python library used for working with data sets.
 
 ## **_INDEX_**
-- [Pandas Intro](##What-is-Pandas?)
-- [Pandas Getting Started](##Installing-Pandas)
+- [Pandas Intro](#What-is-Pandas?)
+- [Pandas Getting Started](#Installing-Pandas)
 - [Pandas Serieds](#Pandas-Series)
 - [Pandas DataFrames](#Pandas-DataFrames)
 - [Reading data from a CSV File](#Reading-data-from-a-CSV-File)
