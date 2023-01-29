@@ -184,9 +184,7 @@ print(df)
 
 ```py
 import pandas as pd
-
 df = pd.read_csv('data.csv')
-
 print(df.to_string())
 ```
 
@@ -206,3 +204,65 @@ df = pd.read_csv('data.csv')
 print(df) 
 ```
 
+
+
+# Reading data from a JSON File
+Big data sets are often stored, or extracted as JSON.
+
+JSON is plain text, but has the format of an object, and is well known in the world of programming, including Pandas.
+
+In our examples we will be using a JSON file called `'data.json'`.
+
+### **Example**
+Loading the JSON file into a data frame
+
+```py
+import pandas as pd
+df = pd.read_json('data.json')
+print(df) 
+```
+
+## `to_string()` method
+**Tip:** use `to_string()` to print the entire DataFrame.
+
+### **Example**
+
+```py
+import pandas as pd
+df = pd.read_json('data.csv')
+print(df.to_string())
+```
+
+## Disctionary as JSON
+JSON = Python Dictionary
+
+JSON objects have the same format as Python dictionaries.
+
+### **Example**
+
+```py
+import pandas as pd
+
+data = {
+  "Duration":{
+    "0":60,
+    "1":60,
+    "2":60,
+    "3":45,
+    "4":45,
+    "5":60
+  },
+  "Pulse":{
+    "0":110,
+    "1":117,
+    "2":103,
+    "3":109,
+    "4":117,
+    "5":102
+  },
+}
+
+df = pd.DataFrame(data)
+
+print(df) 
+```
