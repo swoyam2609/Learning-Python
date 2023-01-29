@@ -5,4 +5,4 @@ This repository contains all of the codes and scripts developed during my journe
 ## Python Pandas
 > Pandas is a Python library used for working with data sets. It has functions for analyzing, cleaning, exploring, and manipulating data. Pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.
 
-> [Pandas Notes](https://github.com/swoyam2609/learningpython/blob/main/Learning%20Pandas/pandas.md)
+> [Pandas Notes](https://github.com/swoyam2609/learningpython/blob/main/Learning%20Pandas/PANDAS.md)

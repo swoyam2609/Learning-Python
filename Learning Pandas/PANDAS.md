@@ -156,5 +156,5 @@ print(df)
 ### **Selecting some rows from the DataFrame**
 
 ```py
-print(df.loc["day2", "day3"])
+print(df.loc[["day2", "day3"]])
 ```
